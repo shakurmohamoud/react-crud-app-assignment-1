@@ -29,7 +29,7 @@ function EditItemPage() {
       await update(id, formData)
       navigate('/posts')
     } catch (err) {
-      console.error(err.message)
+      setError(err.message)
     }
   }
 
