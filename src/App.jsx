@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import ItemsPage from './pages/ItemsPage'
 import ItemDetailsPage from './pages/ItemDetailsPage'
 import CreateItemPage from './pages/CreateItemPage'
+import EditItemPage from './pages/EditItemPage'
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<ItemsPage />} />
-        <Route path="/posts/:id" element={<ItemDetailsPage />} />
         <Route path="/posts/create" element={<CreateItemPage />} />
+        <Route path="/posts/:id" element={<ItemDetailsPage />} />
+        <Route path="/posts/:id/edit" element={<EditItemPage />} />
       </Routes>
     </BrowserRouter>
   )
