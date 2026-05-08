@@ -1,43 +1,26 @@
-import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getById, update } from '../api/dataApi'
+import { update } from '../api/dataApi'
 import ItemForm from '../components/ItemForm'
 
-function EditItemPage() {
+function EditItemPage({ posts, onUpdate }) {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [post, setPost] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const post = posts.find(p => p.id === parseInt(id))
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const data = await getById(id)
-        setPost(data)
-      } catch (err) {
-        setError(err.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchPost()
-  }, [id])
+  if (!post) return <p>Post not found!</p>
 
   const handleUpdate = async (formData) => {
     try {
       await update(id, formData)
+      onUpdate(parseInt(id), formData)
       navigate('/posts')
     } catch (err) {
-      setError(err.message)
+      console.error(err.message)
     }
   }
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
-
   return (
-    <div>
+    <div className="page">
       <h1>Edit Post</h1>
       <ItemForm onSubmit={handleUpdate} initialData={post} />
     </div>

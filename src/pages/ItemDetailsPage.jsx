@@ -1,32 +1,13 @@
-import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getById } from '../api/dataApi'
 
-function ItemDetailsPage() {
+function ItemDetailsPage({ posts }) {
   const { id } = useParams()
-  const [post, setPost] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const post = posts.find(p => p.id === parseInt(id))
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const data = await getById(id)
-        setPost(data)
-      } catch (err) {
-        setError(err.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchPost()
-  }, [id])
-
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  if (!post) return <p>Post not found!</p>
 
   return (
-    <div>
+    <div className="page">
       <h1>{post.title}</h1>
       <p>{post.body}</p>
     </div>

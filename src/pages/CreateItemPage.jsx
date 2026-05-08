@@ -1,25 +1,23 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { create } from '../api/dataApi'
 import ItemForm from '../components/ItemForm'
 
-function CreateItemPage() {
+function CreateItemPage({ onCreate }) {
   const navigate = useNavigate()
-  const [error, setError] = useState(null)
 
   const handleCreate = async (formData) => {
     try {
       await create(formData)
+      onCreate(formData)
       navigate('/posts')
     } catch (err) {
-      setError(err.message)
+      console.error(err.message)
     }
   }
 
   return (
-    <div>
+    <div className="page">
       <h1>Create New Post</h1>
-      {error && <p>Error: {error}</p>}
       <ItemForm onSubmit={handleCreate} />
     </div>
   )
