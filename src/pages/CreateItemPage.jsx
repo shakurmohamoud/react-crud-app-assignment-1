@@ -18,8 +18,8 @@ function CreateItemPage() {
 
   return (
     <div>
-      <h1>Skapa ny post</h1>
-      {error && <p>Fel: {error}</p>}
+      <h1>Create New Post</h1>
+      {error && <p>Error: {error}</p>}
       <ItemForm onSubmit={handleCreate} />
     </div>
   )

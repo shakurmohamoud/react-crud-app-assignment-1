@@ -33,12 +33,12 @@ function EditItemPage() {
     }
   }
 
-  if (loading) return <p>Laddar...</p>
-  if (error) return <p>Fel: {error}</p>
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
 
   return (
     <div>
-      <h1>Redigera post</h1>
+      <h1>Edit Post</h1>
       <ItemForm onSubmit={handleUpdate} initialData={post} />
     </div>
   )

@@ -6,14 +6,14 @@ function ItemForm({ onSubmit, initialData = {} }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!title || !body) return alert('Fyll i alla fält!')
+    if (!title || !body) return alert('Please fill in all fields!')
     onSubmit({ title, body })
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Titel:</label>
+        <label>Title:</label>
         <input
           type="text"
           value={title}
@@ -21,13 +21,13 @@ function ItemForm({ onSubmit, initialData = {} }) {
         />
       </div>
       <div>
-        <label>Innehåll:</label>
+        <label>Content:</label>
         <textarea
           value={body}
           onChange={(e) => setBody(e.target.value)}
         />
       </div>
-      <button type="submit">Spara</button>
+      <button type="submit">Save</button>
     </form>
   )
 }

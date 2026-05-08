@@ -25,12 +25,12 @@ function ItemsPage() {
     setPosts(posts.filter(post => post.id !== id))
   }
 
-  if (loading) return <p>Laddar...</p>
-  if (error) return <p>Fel: {error}</p>
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
 
   return (
     <div>
-      <h1>Alla Posts</h1>
+      <h1>All Posts</h1>
       <ItemList posts={posts} onDelete={handleDelete} />
     </div>
   )

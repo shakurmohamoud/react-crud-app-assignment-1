@@ -1,8 +1,8 @@
 function Home() {
   return (
     <div>
-      <h1>Välkommen!</h1>
-      <p>Här kan du hantera posts.</p>
+      <h1>Welcome!</h1>
+      <p>Here you can manage posts.</p>
     </div>
   )
 }
