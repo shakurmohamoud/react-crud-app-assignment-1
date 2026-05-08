@@ -1,16 +1,33 @@
-# React + Vite
+# React CRUD App - Assignment 1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Shakur Mohamoud**
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This is a React app where you can manage posts. You can view, create, edit and delete posts using a free API called JSONPlaceholder.
 
-## React Compiler
+## API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I used [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - a free fake API for testing.
 
-## Expanding the ESLint configuration
+## How to Run
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repo
+2. Run `npm install`
+3. Run `npm run dev`
+4. Open `http://localhost:5173` in your browser
+
+## Features
+
+- See all posts
+- Click on a post to see more details
+- Create a new post
+- Edit a post
+- Delete a post
+- Navigation with React Router DOM
+- Error and loading handling
+- Simple CSS styling
+
+## Notes
+
+JSONPlaceholder is a fake API so changes are not saved on the server. Everything is handled in local state instead.
