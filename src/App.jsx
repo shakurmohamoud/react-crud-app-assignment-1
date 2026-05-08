@@ -5,6 +5,7 @@ import ItemsPage from './pages/ItemsPage'
 import ItemDetailsPage from './pages/ItemDetailsPage'
 import CreateItemPage from './pages/CreateItemPage'
 import EditItemPage from './pages/EditItemPage'
+import './App.css'
 
 function App() {
   return (
